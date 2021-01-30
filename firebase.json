@@ -1,0 +1,45 @@
+{
+  "hosting": {
+  "public": "public",
+  "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+  "rewrites": [
+  {
+  "source": "**",
+  "destination": "/index.html"
+  }
+  ],
+  "headers": [
+  {
+  "source": "**",
+  "headers": [
+  {
+  "key": "Access-Control-Allow-Origin",
+  "value": "*"
+  }
+  ]
+  },
+  {
+  "source": "**/*.@(wasm)",
+  "headers": [
+  {
+  "key": "Content-Type",
+  "value": "application/wasm"
+  }
+  ]
+  },
+  {
+  "source": "**/*.@(unityweb)",
+  "headers": [
+  {
+  "key": "Content-Type",
+  "value": "application/octet-stream"
+  }
+  ]
+  }
+  ]
+  }
+  }
